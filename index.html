@@ -74,6 +74,7 @@
 		.header {
 			color: #fff;
 			-webkit-text-stroke: 2px #5a1111;
+            margin-bottom: 30px;
 		}
 
 		.header2 {
@@ -129,8 +130,6 @@
 						Твой подарок:
 						<a id="gift" target="_blank" href="#">Скачать</a>
 					</h2>
-					<h2 class="header2" id="final"></h2>
-					<h4 class="header2" style="margin-top: 20px">Команда БФТ мужчин ИИС &#x2764;</h4>
 				</div>
 			</div>
 		</div>
@@ -232,6 +231,7 @@
 				if (riddleAnswer.toLowerCase() === 'сон') {
 					document.getElementById('step2').style.display = 'none';
 					document.getElementById('step3').style.display = 'block';
+                    mainHeader.innerHTML = `${person.kissname}! <br />Отлично! <br /> Осталось совсем чуть-чуть.`;
 				} else {
 					alert(`${riddleAnswer}? Нее... Попробуй еще раз.`);
 				}
@@ -248,8 +248,7 @@
 					document.getElementById('step4').style.display = 'block';
 					const gift = document.getElementById('gift');
 					gift.href = person.link;
-					const final = document.getElementById('final');
-					final.innerHTML = `${person.kissname}, <br />поздравляем тебя с этим прекрасным праздником!`;
+                    mainHeader.innerHTML = `${person.kissname}! <br />Поздравляем тебя с этим прекрасным праздником!, <br /> Команда БФТ мужчин ИИС &#x2764;`;
 				}
 			}
 		</script>
