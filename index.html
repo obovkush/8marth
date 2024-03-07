@@ -222,6 +222,7 @@
 				if (name) {
 					person = passList.find((i) => i.name.toLowerCase() === name.toLowerCase());
 				}
+                if (!person) alert('Неее... Я тебя не узнаю. Попробуй еще раз.');
 				if (person.name && password === person.pass) {
 					document.getElementById('step1').style.display = 'none';
 					document.getElementById('step2').style.display = 'block';
