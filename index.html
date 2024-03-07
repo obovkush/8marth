@@ -222,8 +222,7 @@
 				if (name) {
 					person = passList.find((i) => i.name.toLowerCase() === name.toLowerCase());
 				}
-                if (!person) alert('Неее... Я тебя не узнаю. Попробуй еще раз.');
-				if (person.name && password === person.pass) {
+				if (person && (person.name && password === person.pass)) {
 					document.getElementById('step1').style.display = 'none';
 					document.getElementById('step2').style.display = 'block';
 					mainHeader.innerHTML = `Здравствуй, ${person.kissname}! <br />К дню 8 марта дарим тебе подарок, <br /> но для это надо ответить на пару вопросов.`;
