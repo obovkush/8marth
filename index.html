@@ -65,7 +65,6 @@
 			text-transform: uppercase;
 			font-weight: bold;
 			text-decoration: none;
-			margin-top: 20px;
 		}
 
 		input:hover {
@@ -96,10 +95,6 @@
 			-webkit-text-stroke: 1px #fff;
 		}
 
-		.section__main {
-
-		}
-
 		.content {
 			display: flex;
 			justify-content: flex-end;
@@ -109,6 +104,50 @@
 			background-image: url('./vosmoe-marta.png');
 			background-size: 50%;
 			background-repeat: no-repeat;
+		}
+
+		.quest {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.quest__content {
+			display: flex;
+			gap: 10px;
+		}
+
+		@media (width <= 1000px) {
+			.quest__content {
+				flex-direction: column;
+			}
+		}
+
+		@media (width <= 820px) {
+			.header {
+				height: 100px;
+				font-size: 1.5em;
+			}
+
+			.content {
+				flex-direction: column;
+				height: calc(100vh - 130px);
+				padding-bottom: 30px;
+				background-position-x: center;
+				background-size: 60%;
+			}
+		}
+
+		@media (width <= 620px) {
+			.header {
+				height: 200px;
+				font-size: 1.5em;
+			}
+
+			.content {
+				height: calc(100vh - 230px);
+				background-size: 70%;
+			}
 		}
 	</style>
 
@@ -120,21 +159,33 @@
 		<div class="container">
 			<div class="content">
 				<div id="step1">
-					<h2 class="header2">Введи имя, фамилию и пароль</h2>
-					<input type="text" id="name" placeholder="Имя Фамилия" />
-					<input class="pass" type="password" id="password" placeholder="Пароль" />
-					<button onclick="checkPassword()">Далее</button>
+					<div class="quest">
+						<h2 class="header2">Введи имя, фамилию и пароль</h2>
+						<div class="quest__content">
+							<input type="text" id="name" placeholder="Имя Фамилия" />
+							<input class="pass" type="password" id="password" placeholder="Пароль" />
+							<button onclick="checkPassword()">Далее</button>
+						</div>
+					</div>
 				</div>
 				<div id="step2" style="display: none">
-					<h2 class="header2">Отгадай загадку</h2>
-					<p>Что можно увидеть с закрытыми глазами, но нельзя увидеть с открытыми?</p>
-					<input type="text" id="riddle" placeholder="Ответ" />
-					<button onclick="checkRiddle()">Далее</button>
+					<div class="quest">
+						<h2 class="header2">Отгадай загадку</h2>
+						<p>Что можно увидеть с закрытыми глазами, но нельзя увидеть с открытыми?</p>
+						<div class="quest__content">
+							<input type="text" id="riddle" placeholder="Ответ" />
+							<button onclick="checkRiddle()">Далее</button>
+						</div>
+					</div>
 				</div>
 				<div id="step3" style="display: none">
-					<h2 class="header2">Какая ты умная! <br />Теперь введи номер телефона</h2>
-					<input type="tel" id="phone" pattern="^\+7(\s+)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$" placeholder="Номер телефона" required />
-					<button onclick="submitForm()">Получить подарок</button>
+					<div class="quest">
+						<h2 class="header2">Какая ты умная! <br />Теперь введи номер телефона</h2>
+						<div class="quest__content">
+							<input type="tel" id="phone" pattern="^\+7(\s+)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$" placeholder="Номер телефона" required />
+							<button onclick="submitForm()">Получить подарок</button>
+						</div>
+					</div>
 				</div>
 				<div id="step4" style="display: none">
 					<h2 class="header2">
