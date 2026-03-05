@@ -445,14 +445,14 @@
 							</div>
 							<iframe id="climber-iframe" title="Игра Climber" scrolling="no"></iframe>
 						</div>
-						<button type="button" id="climber-next-btn" class="climber-skip" onclick="skipClimber()">Пропустить</button>
+						<button type="button" id="climber-next-btn" class="climber-skip" onclick="skipClimber()">Дальше</button>
 					</div>
 				</div>
 
 				<!-- Шаг 4: Эмодзи-конкурс -->
 				<div id="step4" class="step">
 					<div class="card">
-						<h2>Угадай фильм</h2>
+						<h2>«Фильмы за 500»</h2>
 						<p>Расшифруй название известного фильма, записанное эмодзи (одним словом):</p>
 						<div class="emoji-contest" aria-hidden="true">🚢🧊🥶🎻</div>
 						<div class="quest__content">
@@ -572,7 +572,7 @@
 				const valid = ['титаник'];
 				const ok = valid.some((v) => answer.includes(v) || v.replace(/\s/g, '').includes(answer));
 				if (ok) {
-					mainHeader.innerHTML = `${person}, отлично!<br />Говорят «За каждым успешным мужчиной стоит сильная/любящая женщина»<br />Помоги бедолаге достигнуть вершины!. Или нажми «Пропустить».`;
+					mainHeader.innerHTML = `${person}, отлично!<br />Говорят «За каждым успешным мужчиной стоит сильная/любящая женщина»<br />Помоги бедолаге достигнуть вершины. Или жми «Дальше».`;
 					showStep('step_climber');
 				} else {
 					alert('Подсказка: Саундтрек к фильму «My Heart Will Go On» исполнила канадская певица Селин Дион');
