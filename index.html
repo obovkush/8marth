@@ -569,9 +569,12 @@
 
 			function checkEmoji() {
 				const answer = document.getElementById('emojiAnswer').value.trim().toLowerCase();
-				const valid = ['титаник'];
-				const ok = valid.some((v) => answer.includes(v) || v.replace(/\s/g, '').includes(answer));
-				if (ok) {
+				if (!answer) {
+					alert('Напиши ответ в поле.');
+					return;
+				}
+				const valid = 'титаник';
+				if (valid === answer) {
 					mainHeader.innerHTML = `${person}, отлично!<br />Говорят «За каждым успешным мужчиной стоит сильная/любящая женщина»<br />Помоги бедолаге достигнуть вершины. Или жми «Дальше».`;
 					showStep('step_climber');
 				} else {
